@@ -1,0 +1,14 @@
+function search(nums: number[], target: number): number {
+    let left = 0;
+    let right = nums.length -1;
+
+    while (left <= right) {
+        let index = Math.floor((right - left) / 2) + left;
+
+        if (nums[index] === target) return index;
+        if (nums[index] < target) left = index + 1;
+        else right = index - 1;
+    }
+
+    return -1;
+};
